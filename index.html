@@ -35,7 +35,7 @@
 
         .message-display {
             opacity: 1;
-            background-color: black;
+            background-color: gray;
             position: fixed;  
             width: 100vmin;
             height: 100vmin;     
@@ -43,7 +43,7 @@
         }
 
         .you-lost {
-            font: 50px Arial, sans-serif;
+            font: 30px Arial, sans-serif;
             width: 40vmin;
             height: 20vmin;
             background-color: gray;
@@ -58,7 +58,7 @@
         }
 
         .begin-game {
-            font: 50px Arial, sans-serif;
+            font: 30px Arial, sans-serif;
             width: 50vmin;
             height: 20vmin;
             background-color: gray;
@@ -91,7 +91,7 @@
             font-size: 16px;
             margin: 4px 2px;
             cursor: pointer;
-            margin-bottom: 15px;
+            margin-top: 15px;
             width: 30vmin;
         }
 
@@ -105,16 +105,17 @@
     <div id="game-board">
     </div>
     <div id="error-message" class="message-display">
-        <div class="you-lost">You Lost !!!
-
+        <div class="you-lost">
+            <span>You need to try harder !!!</span><br>
+            <button onClick="window.location.reload();" class="game-selection-button">I am ready</button>
         </div>
     </div>
     <div id="game-mode" class="message-display">
         <div class="begin-game">
-            <p class="message-text">Please select game mode</p>
-            <input type="button" id="easy" value="EASY" class="game-selection-button"><br>
-            <input type="button" id="medium" value="MEDIUM" class="game-selection-button"><br>
-            <input type="button" id="hard" value="HARD"class="game-selection-button"><br>
+            <p class="message-text">Who do you think you are</p>
+            <input type="button" id="easy" value="Spare me !!" class="game-selection-button"><br>
+            <input type="button" id="medium" value="I know my game..." class="game-selection-button"><br>
+            <input type="button" id="hard" value="Here to get killed" class="game-selection-button"><br>
         </div>
     </div>
 </body>

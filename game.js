@@ -46,15 +46,15 @@ function checkForDeath() {
 
 function gameModeSelection(value) {
     switch(value) {
-        case 'EASY':
+        case 'easy':
             updateSnakeSpeed(2);
             updateExpansionRate(1);
             break;
-        case 'MEDIUM':
+        case 'medium':
             updateSnakeSpeed(3);
             updateExpansionRate(3);
             break;
-        case 'HARD':
+        case 'hard':
             updateSnakeSpeed(5);
             updateExpansionRate(3);
             break;
@@ -67,9 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (inputRadio.length > 0) {
         for (let i=0; i<inputRadio.length;i++){
             inputRadio[i].addEventListener("click", function() {
-                gameModeSelection(inputRadio[i].value)
+                gameModeSelection(inputRadio[i].id)
             });
-            //gameModeSelection(inputRadio[i].value))
         }
     }    
 })
