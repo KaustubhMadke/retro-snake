@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            background-color: black;
+        }
+        #game-board {
+            background-color: gray;
+            width: 100vmin;
+            height: 100vmin;
+            display: grid;
+            grid-template-rows: repeat(21,1fr);
+            grid-template-columns: repeat(21,1fr);
+        }
+
+        .snake {
+            background-image: linear-gradient(rgb(0, 81, 255), rgba(0, 81, 255, 0.521), rgba(0, 81, 255, 0.219));
+            border: .25vmin solid black;
+        }
+
+        .food {
+            background-image: linear-gradient(rgb(255, 166, 0), rgba(255, 166, 0, 0.541), rgba(255, 166, 0, 0.171));
+            border: .25vmin solid black;
+        }
+
+        .message-display {
+            opacity: 1;
+            background-color: black;
+            position: fixed;  
+            width: 100vmin;
+            height: 100vmin;     
+            visibility: hidden;
+        }
+
+        .you-lost {
+            font: 50px Arial, sans-serif;
+            width: 40vmin;
+            height: 20vmin;
+            background-color: gray;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 30px;
+            opacity: 1;
+            top: 40%;
+            left: 30%;
+        }
+
+        .begin-game {
+            font: 50px Arial, sans-serif;
+            width: 50vmin;
+            height: 20vmin;
+            background-color: gray;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 30px;
+            opacity: 1;
+            top: 25%;
+            left: 25%;
+        }
+
+        #game-mode {
+            background-color: gray;
+            visibility: visible;
+            position: fixed;  
+            width: 100vmin;
+            height: 100vmin;               
+        }
+
+        .game-selection-button {
+            background-color: rgb(0, 81, 255);
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            width: 30vmin;
+        }
+
+        .message-text {
+            font: 30px Arial, sans-serif;
+        }
+    </style>
+    <script src="game.js" defer type="module"></script>
+</head>
+<body>
+    <div id="game-board">
+    </div>
+    <div id="error-message" class="message-display">
+        <div class="you-lost">You Lost !!!
+
+        </div>
+    </div>
+    <div id="game-mode" class="message-display">
+        <div class="begin-game">
+            <p class="message-text">Please select game mode</p>
+            <input type="button" id="easy" value="EASY" class="game-selection-button"><br>
+            <input type="button" id="medium" value="MEDIUM" class="game-selection-button"><br>
+            <input type="button" id="hard" value="HARD"class="game-selection-button"><br>
+        </div>
+    </div>
+</body>
+</html>
