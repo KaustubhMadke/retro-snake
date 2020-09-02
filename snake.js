@@ -17,22 +17,29 @@ export function update() {
     }
 
     snakeBody[0].x += inputDirection.x
-    snakeBody[0].y += inputDirection.y    
-    // if ((snakeBody.length / 10) === 1) {
-    //     if (!speedBumped) {
-    //         SNAKE_SPEED = SNAKE_SPEED + 1
-    //     }        
-    // } else {
-    //     speedBumped = false
-    // }
+    snakeBody[0].y += inputDirection.y
 }
 
 export function draw(gameBoard) {
-    snakeBody.forEach(segment => {
+    snakeBody.forEach((segment,index) => {
         const snakeElement = document.createElement('div')
         snakeElement.style.gridRowStart = segment.y
         snakeElement.style.gridColumnStart = segment.x
-        snakeElement.classList.add('snake')
+        let inputDirection = getInputDirection()
+        if (index === 0 ){
+            snakeElement.classList.add('snake-head')
+            if (inputDirection.x === 0 && (inputDirection.y === -1 || inputDirection.y === 0)){
+                snakeElement.style.transform = "rotate(180deg)"
+            } else if (inputDirection.x === 0 && inputDirection.y === 1){
+                snakeElement.style.transform = "rotate(0deg)"
+            } else if (inputDirection.x === -1 && inputDirection.y === 0){
+                snakeElement.style.transform = "rotate(90deg)"
+            } else if (inputDirection.x === 1 && inputDirection.y === 0){
+                snakeElement.style.transform = "rotate(270deg)"
+            }            
+        } else {
+            snakeElement.classList.add('snake')                   
+        }
         gameBoard.appendChild(snakeElement)
     })
 }
