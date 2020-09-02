@@ -15,7 +15,7 @@
             background-color: black;
         }
         #game-board {
-            background-color: gray;
+            background-color: rgb(141, 204, 144);
             width: 100vmin;
             height: 100vmin;
             display: grid;
@@ -24,18 +24,30 @@
         }
 
         .snake {
-            background-image: linear-gradient(rgb(0, 81, 255), rgba(0, 81, 255, 0.521), rgba(0, 81, 255, 0.219));
-            border: .25vmin solid black;
+            background-image: url("snake-body.png");
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;  
+            border-radius: .5rem;
+        }
+
+        .snake-head {
+            background-image: url("snake-head.png");
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;   
         }
 
         .food {
-            background-image: linear-gradient(rgb(255, 166, 0), rgba(255, 166, 0, 0.541), rgba(255, 166, 0, 0.171));
-            border: .25vmin solid black;
+            background-image: url("red-apple.png");
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;  
         }
 
         .message-display {
             opacity: 1;
-            background-color: gray;
+            background-color: rgb(141, 204, 144);;
             position: fixed;  
             width: 100vmin;
             height: 100vmin;     
@@ -46,7 +58,7 @@
             font: 30px Arial, sans-serif;
             width: 40vmin;
             height: 20vmin;
-            background-color: gray;
+            background-color: rgb(141, 204, 144);;
             position: absolute;
             align-items: center;
             justify-content: center;
@@ -61,7 +73,7 @@
             font: 30px Arial, sans-serif;
             width: 50vmin;
             height: 20vmin;
-            background-color: gray;
+            background-color: rgb(141, 204, 144);;
             position: absolute;
             align-items: center;
             justify-content: center;
@@ -73,7 +85,7 @@
         }
 
         #game-mode {
-            background-color: gray;
+            background-color: rgb(141, 204, 144);;
             visibility: visible;
             position: fixed;  
             width: 100vmin;
@@ -81,7 +93,7 @@
         }
 
         .game-selection-button {
-            background-color: rgb(0, 81, 255);
+            background-color: rgb(45, 130, 66);
             border: none;
             color: white;
             padding: 15px 32px;
